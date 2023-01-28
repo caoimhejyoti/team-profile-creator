@@ -7,7 +7,7 @@ const { number } = require("yargs");
 
 // DESCRIPTION: Array of questions for user input
 const questions = [
-    {name: "name",
+    {name: "teamName",
     type: "input",
     message: "What is the Team name?",
     validate: function (userInput) {
@@ -18,18 +18,19 @@ const questions = [
                 };
     }},
 
-    {name: "manager-name",
+    {name: "managerName",
     type: "input",
     message: "What is the Team Manager's name?",
-    validate: function (userInput) {
-                if (typeof userInput === "string"){
-                    return true
-                }else{
-                    return ("Please enter a valid name");
-                };
-    }},
+    // validate: function (userInput) {
+    //             if (typeof userInput === "string"){
+    //                 return true
+    //             }else{
+    //                 return ("Please enter a valid name");
+    //             };
+    default: 'My Team',
+    },
 
-    {name: "manager-id",
+    {name: "managerID",
     type: "number",
     message: "What is the Team Manager's ID?",
     validate: function (userInput) {
@@ -40,7 +41,7 @@ const questions = [
                 };
     }},
 
-    {name: "manager-email",
+    {name: "managerEmail",
     type: "input",
     message: "What is the Team Manager's email address?",
     validate: function (userInput) {
@@ -53,7 +54,7 @@ const questions = [
             },
     },
 
-    {name: "manager-office",
+    {name: "managerOffice",
     type: "number",
     message: "What is the Team Manager's office number?",
     validate: function (userInput) {
@@ -64,7 +65,7 @@ const questions = [
                 };
     }},
 
-    {name: "add-team-member",
+    {name: "addTeamMember",
     type: "list",
     message: "Which type of Team Member would you like to add?",
     choices: [
@@ -75,7 +76,7 @@ const questions = [
     default: 'Engingeer',
     },
 
-    {name: "engineer-name",
+    {name: "engineerName",
     type: "input",
     message: "What is the Engineer's name?",
     validate: function (userInput) {
@@ -86,7 +87,7 @@ const questions = [
                 };
     }},
 
-    {name: "engineer-id",
+    {name: "engineerID",
     type: "number",
     message: "What is the Engineer's ID?",
     validate: function (userInput) {
@@ -97,7 +98,7 @@ const questions = [
                 };
     }},
 
-    {name: "engineer-email",
+    {name: "engineerEmail",
     type: "input",
     message: "What is the Engineer's email address?",
     validate: function (userInput) {
@@ -109,7 +110,7 @@ const questions = [
                 };
             },
     },
-    {name: "intern-name",
+    {name: "internName",
     type: "input",
     message: "What is the Intern's name?",
     validate: function (userInput) {
@@ -120,7 +121,7 @@ const questions = [
                 };
     }},
 
-    {name: "intern-id",
+    {name: "internID",
     type: "number",
     message: "What is the Intern's ID?",
     validate: function (userInput) {
@@ -131,7 +132,7 @@ const questions = [
                 };
     }},
 
-    {name: "intern-email",
+    {name: "internEmail",
     type: "input",
     message: "What is the Intern's email address?",
     validate: function (userInput) {
@@ -144,7 +145,7 @@ const questions = [
             },
     },
 
-    {name: "intern-school",
+    {name: "internSchool",
     type: "input",
     message: "What is the Intern's school",
     validate: function (userInput) {
