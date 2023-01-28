@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-creator",
+  "version": "1.0.0",
+  "description": "Node.js command line application creating a HTML team profile",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caoimhejyoti/team-profile-creator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caoimhejyoti/team-profile-creator/issues"
+  },
+  "homepage": "https://github.com/caoimhejyoti/team-profile-creator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
