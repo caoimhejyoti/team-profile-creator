@@ -48,10 +48,23 @@ THEN I exit the application, and the HTML is generated
 ```
 
 ## Installation
+This program opporates from your command line interface(CLI). First navigate to the application directory. Then run the following commands:
 
+```bash
+npm init
+npm install inquirer@8.2.4
+```
 
 ## Usage
+Once fully installed, this program is invoked with the following command:
+```bash
+node index.js
+```
+<!-- FIXME: confirm storage location -->
+Once the application successfully created the README file, the file will be stored in the **Develop** folder.
 
+To see this program in opperation, watch our live demo!
+<!-- [![Youtube screen grab of live demo recording.](Develop/assets/img/youtube-screengrab.png)](https://www.youtube.com/watch?v=CsS6BedKSkE&ab_channel=CaoimheJyoti) -->
 
 ## Future Developments
 
