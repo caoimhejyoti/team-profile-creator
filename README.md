@@ -70,8 +70,16 @@ To see this program in opperation, watch our live demo!
 
 
 ## Resources
+#### Node
 https://www.npmjs.com/package/inquirer/v/8.2.4
 https://www.npmjs.com/package/string-validate
+
+#### Icons
+https://freeicons.io/business-and-employees-7/hierarchy-team-management-coordinator-manager-businessman-employee-icon-434827
+
+https://freeicons.io/business-model-canvas-icon-set-4/business-activities-engineer-professions-worker-icon-163245
+
+https://freeicons.io/education-and-learning-2/education-and-learning-cap-student-graduation-university-icon-42511
 
 
 
