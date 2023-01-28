@@ -57,6 +57,7 @@ THEN I exit the application, and the HTML is generated
 
 
 ## Resources
+https://www.npmjs.com/package/inquirer/v/8.2.4
 
 
 ## License
