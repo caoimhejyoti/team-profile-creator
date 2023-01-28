@@ -71,6 +71,8 @@ To see this program in opperation, watch our live demo!
 
 ## Resources
 https://www.npmjs.com/package/inquirer/v/8.2.4
+https://www.npmjs.com/package/string-validate
+
 
 
 ## License
