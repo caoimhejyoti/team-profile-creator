@@ -1,11 +1,15 @@
 // DESCRIPTION: node packages used within application.
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 const fs = require ("fs");
+const axios = require ("axios");
 
-const Employee = require('./Employee.js');
-const Manager = require('./Manager.js');
-const Engineer = require('./Engineer.js');
-const Intern = require('./Intern.js');
+//DESCRIPTION: links to generateHTML.js file for exported packages.
+const generateHTML = require(`./src/generateHTML`);
+
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 const team = [];
 
@@ -26,13 +30,14 @@ function firstQuestion(){
             {name: "managerID",
             type: "number",
             message: "What is the Team Manager's ID?",
-            validate: function (userInput) {
-                        if (typeof userInput === number){
-                            return true
-                        }else{
-                            return ("Please enter a valid ID number");
-                        };
-            }},
+            // validate: function (userInput) {
+            //             if (typeof userInput === number){
+            //                 return true
+            //             }else{
+            //                 return ("Please enter a valid ID number");
+            //             };
+            // }
+            },
 
             {name: "managerEmail",
             type: "input",
@@ -50,13 +55,14 @@ function firstQuestion(){
             {name: "managerOffice",
             type: "number",
             message: "What is the Team Manager's office number?",
-            validate: function (userInput) {
-                        if (typeof userInput === number){
-                            return true
-                        }else{
-                            return ("Please enter a valid office number");
-                        };
-            }},
+            // validate: function (userInput) {
+            //             if (typeof userInput === number){
+            //                 return true
+            //             }else{
+            //                 return ("Please enter a valid office number");
+            //             };
+            // }
+            },
         ])
         .then ((data) => {
             const manager = new Manager(
@@ -65,7 +71,7 @@ function firstQuestion(){
                 data.managerEmail,
                 data.managerOffice,
             );
-            console.log(manager);
+            // console.log(manager);
             team.push(manager);
             addTeamMember();
             console.log(team);
@@ -98,9 +104,9 @@ function addTeamMember(){
 };
 
 const employeeQuestions = [
-    {name: `${role}Name`,
+    {name: `employeeName`,
     type: "input",
-    message: `What is the ${role}'s name?`,
+    message: `What is the Employee's name?`,
     validate: function (userInput) {
                 if (typeof userInput === "string"){
                     return true
@@ -109,20 +115,21 @@ const employeeQuestions = [
                 };
     }},
 
-    {name: `${role}ID`,
+    {name: `employeeID`,
     type: "number",
-    message: `What is the ${role}'s ID?`,
-    validate: function (userInput) {
-                if (typeof userInput === number){
-                    return true
-                }else{
-                    return ("Please enter a valid ID number");
-                };
-    }},
+    message: `What is the Employee's ID?`,
+    // validate: function (userInput) {
+    //             if (typeof userInput === number){
+    //                 return true
+    //             }else{
+    //                 return ("Please enter a valid ID number");
+    //             };
+    // }
+    },
 
-    {name: `${role}Email`,
+    {name: `employeeEmail`,
     type: "input",
-    message: `What is the ${role}'s email address?`,
+    message: `What is the Employee's email address?`,
     validate: function (userInput) {
                 const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 if (symbols.test(String(userInput).toLowerCase())) {
@@ -132,7 +139,7 @@ const employeeQuestions = [
                 };
             },
     }
-]
+];
 
 function engineerQuestions() {
     inquirer
@@ -152,3 +159,61 @@ function engineerQuestions() {
                             });
             }},
         ])
+        .then ((data) => {
+            const engineer = new Engineer(
+                data.engineerName,
+                data.engineerID,
+                data.engineerEmail,
+                data.engineerOffice,
+            );
+            // console.log(engineer);
+            team.push(engineer);
+            addTeamMember();
+            console.log(team);
+        });
+};
+
+function internQuestions() {
+    inquirer
+        .prompt([
+            {employeeQuestions},
+            {name: "internSchool",
+            type: "input",
+            message: "What is the Intern's school",
+            validate: function (userInput) {
+                        if (typeof userInput === "string"){
+                            return true
+                        }else{
+                            return ("Please enter a valid school name");
+                        };
+            }},
+        ])
+        .then ((data) => {
+            const intern = new Intern(
+                data.internName,
+                data.internID,
+                data.internEmail,
+                data.internOffice,
+            );
+            // console.log(intern);
+            team.push(intern);
+            addTeamMember();
+            console.log(team);
+        });
+};
+
+
+
+// DESCRIPTION: function to write HTML file
+function renderHTMLFile() {
+    fs.writeFile(`test.html`, generateHTML(team), (err) =>
+    err ? console.error(err) : console.log('Team webpage created!'))
+};
+
+//DESCRIPTION: Function to initialize app
+function initFnc() {
+    firstQuestion();
+}
+
+//DESCRIPTION: Function call to initialize app
+initFnc();
