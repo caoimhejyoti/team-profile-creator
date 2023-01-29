@@ -33,7 +33,10 @@ const intern = require('./../lib/Intern')
 
 function generateHTML(data) {
     return `
-    testing
+    ${data.manager.name},
+    ${data.engineer.name},
+    ${data.intern.name},
+    \n test text. 
     `
 };
 
