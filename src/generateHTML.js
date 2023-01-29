@@ -1,46 +1,40 @@
-//DESCRIPTION: Function generate header html.
-function renderHeaderFnc (name) {
-    if (!name) {
-      return "";
-    }else{
-      return `     
-    <header class="header row">
-        <h1 class="fw-bold">${teamName} Team</h1>
-    </header>
-    `
-    }
-}
+// DESCRIPTION: node packages used within application.
+const fs = require ("fs");
 
-//DESCRIPTION: Function generate manager card.
-function renderHeaderFnc (managerName, managerID, managerEmail, managerOffice) {
-    return `     
-    <section class="card">
-        <h1 class="fw-bold">${name} Team</h1>
-    </section>
-    `
-}
+const Employee = require('./../lib/Employee');
+const Manager = require('./../lib/Manager.js');
+const Engineer = require('./../lib/Engineer.js');
+const Intern = require('./../lib/Intern.js');
 
-function generateMarkdown(data) {
+const intern = require('./../lib/Intern')
+
+
+// //DESCRIPTION: Function generate header html.
+// function renderHeaderFnc (name) {
+//     if (!name) {
+//       return "";
+//     }else{
+//       return `     
+//     <header class="header row">
+//         <h1 class="fw-bold">${teamName} Team</h1>
+//     </header>
+//     `
+//     }
+// }
+
+// //DESCRIPTION: Function generate manager card.
+// function renderHeaderFnc (managerName, managerID, managerEmail, managerOffice) {
+//     return `     
+//     <section class="card">
+//         <h1 class="fw-bold">${name} Team</h1>
+//     </section>
+//     `
+// }
+
+function generateHTML(data) {
     return `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${name}</title>
-        FIXME: create style sheets!
-
-    </head>
-    <body>
-        ${renderHeaderFnc}
-
-        <main>
-            
-
-        </main>
-    </body>
-    `;
+    testing
+    `
 };
 
 // DESCRIPTION: exporting functions for use within index.js
