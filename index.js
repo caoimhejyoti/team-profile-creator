@@ -13,6 +13,7 @@ const Intern = require('./lib/Intern.js');
 
 const team = [];
 
+// FIXME: validate number questions. DESCRIPTION: function with manager questions
 function firstQuestion(){
     inquirer
         .prompt ([
@@ -73,11 +74,12 @@ function firstQuestion(){
             );
             // console.log(manager);
             team.push(manager);
-            addTeamMember();
             console.log(team);
+            addTeamMember();
         });
 }
 
+// DESCRIPTION: function asking user if they want to add a team member
 function addTeamMember(){
     inquirer
         .prompt([
@@ -85,7 +87,7 @@ function addTeamMember(){
             type: "list",
             message: "Which type of Team Member would you like to add?",
             choices: [
-                'Engingeer',
+                'Engineer',
                 'Intern',
                 "I don't want to add a new team member",
             ],
@@ -103,6 +105,7 @@ function addTeamMember(){
         });
 };
 
+// FIXME: can this be used?
 const employeeQuestions = [
     {name: `employeeName`,
     type: "input",
@@ -141,14 +144,48 @@ const employeeQuestions = [
     }
 ];
 
+// FIXME: validate number questions. DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
-            {employeeQuestions},
+            {name: `engineerName`,
+            type: "input",
+            message: `What is the Engineer's name?`,
+            validate: function (userInput) {
+                        if (typeof userInput === "string"){
+                            return true
+                        }else{
+                            return ("Please enter a valid name");
+                        };
+            }},
+
+            {name: `engineerID`,
+            type: "number",
+            message: `What is the Engineer's ID?`,
+            // validate: function (userInput) {
+            //             if (typeof userInput === number){
+            //                 return true
+            //             }else{
+            //                 return ("Please enter a valid ID number");
+            //             };
+            // }
+            },
+
+            {name: `engineerEmail`,
+            type: "input",
+            message: `What is the Engineer's email address?`,
+            validate: function (userInput) {
+                        const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        if (symbols.test(String(userInput).toLowerCase())) {
+                            return true
+                        } else {
+                            return ('Please enter a valid email!');
+                        };
+            }},
+            
             {name: "github",
             type: "input",
             message: "What is the Engineers's GitHub username?",
-            when: (answers) => answers.addTeamMember === 'Intern',
             validate: function (value) {
                         return axios.get(`https://api.github.com/users/${value}`)
                             .then (data => {
@@ -173,10 +210,45 @@ function engineerQuestions() {
         });
 };
 
+// FIXME: validate number questions. DESCRIPTION: function with intern questions
 function internQuestions() {
     inquirer
         .prompt([
-            {employeeQuestions},
+            {name: `internName`,
+            type: "input",
+            message: `What is the Intern's name?`,
+            validate: function (userInput) {
+                        if (typeof userInput === "string"){
+                            return true
+                        }else{
+                            return ("Please enter a valid name");
+                        };
+            }},
+
+            {name: `internID`,
+            type: "number",
+            message: `What is the Intern's ID?`,
+            // validate: function (userInput) {
+            //             if (typeof userInput === number){
+            //                 return true
+            //             }else{
+            //                 return ("Please enter a valid ID number");
+            //             };
+            // }
+            },
+
+            {name: `internEmail`,
+            type: "input",
+            message: `What is the Intern's email address?`,
+            validate: function (userInput) {
+                        const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        if (symbols.test(String(userInput).toLowerCase())) {
+                            return true
+                        } else {
+                            return ('Please enter a valid email!');
+                        };
+            }},
+
             {name: "internSchool",
             type: "input",
             message: "What is the Intern's school",
@@ -201,7 +273,6 @@ function internQuestions() {
             console.log(team);
         });
 };
-
 
 
 // DESCRIPTION: function to write HTML file
