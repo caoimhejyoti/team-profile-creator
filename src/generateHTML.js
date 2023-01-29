@@ -31,11 +31,10 @@ const intern = require('./../lib/Intern')
 //     `
 // }
 
-function generateHTML(data) {
+function generateHTML(team) {
+    console.log(team);
     return `
-    ${data.manager.name},
-    ${data.engineer.name},
-    ${data.intern.name},
+    ${team}
     \n test text. 
     `
 };
