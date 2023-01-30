@@ -144,7 +144,7 @@ const employeeQuestions = [
     }
 ];
 
-// FIXME: validate number questions. DESCRIPTION: function with engineer questions
+// FIXME: validate number questions and github. DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
@@ -186,9 +186,10 @@ function engineerQuestions() {
             {name: "github",
             type: "input",
             message: "What is the Engineers's GitHub username?",
+            // FIXME: validate not working - results in undefined
             validate: function (value) {
                         return axios.get(`https://api.github.com/users/${value}`)
-                            .then (data => {
+                            .then (value => {
                                 return true;
                             })
                             .catch (err => {
@@ -205,8 +206,8 @@ function engineerQuestions() {
             );
             // console.log(engineer);
             team.push(engineer);
-            addTeamMember();
             console.log(team);
+            addTeamMember();
         });
 };
 
@@ -269,8 +270,8 @@ function internQuestions() {
             );
             // console.log(intern);
             team.push(intern);
-            addTeamMember();
             console.log(team);
+            addTeamMember();
         });
 };
 
@@ -278,7 +279,7 @@ function internQuestions() {
 // DESCRIPTION: function to write HTML file
 function renderHTMLFile() {
     fs.writeFile(`test.html`, generateHTML(team), (err) =>
-    err ? console.error(err) : console.log('Team webpage created!'))
+    err ? console.error(err) : console.log(team))
 };
 
 //DESCRIPTION: Function to initialize app
