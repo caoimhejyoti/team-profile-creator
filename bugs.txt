@@ -21,12 +21,14 @@
         Intern { name: 'i', id: 3, email: 'i@i.com', school: undefined }
         ]
 
-2) Github validation is not working - results in undefined. Possibly to do with axios?
+2) WORKING! Github validation is not working - results in undefined. Possibly to do with axios?
     axios working correctly. currently able to check if username is correct.
     when usrename is correct it is then stored as undefined. 
 
-3) Intern school is resulting in undefined. Unsure why!
+3) WORKING! Intern school is resulting in undefined. Unsure why!
 
-4) html produced at the end of the process is not printing the results. Curent result is:
+4) WORKING! html produced at the end of the process is not printing the results. Curent result is:
             [object Object],[object Object],[object Object]
+
+            This is due to the data being too large. needs to be broken down. 
 
