@@ -202,7 +202,7 @@ function engineerQuestions() {
                 data.engineerName,
                 data.engineerID,
                 data.engineerEmail,
-                data.engineerOffice,
+                data.github,
             );
             // console.log(engineer);
             team.push(engineer);
@@ -266,7 +266,7 @@ function internQuestions() {
                 data.internName,
                 data.internID,
                 data.internEmail,
-                data.internOffice,
+                data.internSchool,
             );
             // console.log(intern);
             team.push(intern);
