@@ -72,12 +72,23 @@ To see this program in opperation, watch our live demo!
 ## Resources
 #### Node
 https://www.npmjs.com/package/inquirer/v/8.2.4
+
 https://www.npmjs.com/package/string-validate
+
+https://stackoverflow.com/questions/64325326/using-previous-answer-for-the-next-question-in-inquirer
+
+
+### Styling
+https://colorlib.com/wp/bootstrap-cards/
+
+https://codepen.io/bekirhanbayar/pen/pxbqmm
+
+https://codepen.io/soumyashaw/pen/maOzLO
 
 #### Icons
 https://freeicons.io/business-and-employees-7/hierarchy-team-management-coordinator-manager-businessman-employee-icon-434827
 
-https://freeicons.io/business-model-canvas-icon-set-4/business-activities-engineer-professions-worker-icon-163245
+https://freeicons.io/computers-and-hardware/computers-and-hardware-screen-computer-config-configuration-icon-42199
 
 https://freeicons.io/education-and-learning-2/education-and-learning-cap-student-graduation-university-icon-42511
 
