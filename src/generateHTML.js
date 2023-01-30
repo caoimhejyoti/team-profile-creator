@@ -34,7 +34,7 @@ const intern = require('./../lib/Intern')
 function generateHTML(team) {
     console.log(team);
     return `
-    ${team}
+    ${team[0].name}
     \n test text. 
     `
 };
