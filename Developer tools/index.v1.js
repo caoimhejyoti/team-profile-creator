@@ -179,7 +179,7 @@ const questions = [
 ];
 
 //DESCRIPTION: links to generateHTML.js file for exported packages.
-const generateHTML = require(`./src/generateHTML`);
+const generateHTML = require(`../src/generateHTML`);
 
 // DESCRIPTION: function to write HTML file
 function writeToFileFnc() {
