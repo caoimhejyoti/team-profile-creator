@@ -281,7 +281,7 @@ function internQuestions() {
 
 // DESCRIPTION: function to write HTML file
 function renderHTMLFile() {
-    fs.writeFile(`test.html`, generateTeamHTML(team), (err) =>
+    fs.writeFile(`Team.html`, generateTeamHTML(team), (err) =>
     err ? console.error(err) : console.log(team))
 };
 
