@@ -34,8 +34,10 @@
 
 31.01.23 - 13:58:
 
-1) need to add loop within generate engineer cards function for multiple cards if required
+1) WORKING! need to add loop within generate engineer cards function for multiple cards if required
 
-2) need to add loop within generate intern cards function for multiple cards if required
+2) WORKING! need to add loop within generate intern cards function for multiple cards if required
 
-3) not able to read information from team array
+3) WORKING! not able to read information from team array
+
+4) profile image position - look at wrapping cards. 
