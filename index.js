@@ -144,7 +144,7 @@ const employeeQuestions = [
     }
 ];
 
-// FIXME: validate number questions and github. DESCRIPTION: function with engineer questions
+// FIXME: validate number questions. DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
