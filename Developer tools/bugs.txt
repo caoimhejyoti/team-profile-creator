@@ -37,3 +37,5 @@
 1) need to add loop within generate engineer cards function for multiple cards if required
 
 2) need to add loop within generate intern cards function for multiple cards if required
+
+3) not able to read information from team array
