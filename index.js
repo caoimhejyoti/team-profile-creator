@@ -1,4 +1,7 @@
-// DESCRIPTION: node packages used within application.
+// TODO: 
+    // remove all highlighted comments
+
+    // DESCRIPTION: node packages used within application.
 const inquirer = require("inquirer");
 const fs = require ("fs");
 const axios = require ("axios");
