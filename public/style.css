@@ -74,11 +74,17 @@ p{
       z-index: -1;
       transform: rotate(-13deg);
   }
+/* 
+  .team-card .profile-thumb-block{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+  } */
   .team-card .profile {
     border-radius: 50%;
     position: absolute;
-    bottom: 55%;
-    left: 30%;
+    bottom: 50%;
+    left: 20%;
     max-width: 200px;
     opacity: 1;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
