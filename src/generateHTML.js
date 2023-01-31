@@ -10,10 +10,10 @@ function generateManagerCard(manager) {
             <img src="/public/img/manager.png" alt="manager-icon" class="profile"/>
         </section>
         <section class="card-content">
-        <h2>${manager.managerName}<small>Manager</small></h2>
-        <p>ID: ${manager.managerID}</p>
-        <p>Email: ${manager.managerEmail}</p>
-        <p>Office Number: ${manager.managerOffice}</p>
+        <h2>${manager.name}<small>Manager</small></h2>
+        <p>ID: ${manager.id}</p>
+        <p>Email: ${manager.email}</p>
+        <p>Office Number: ${manager.office}</p>
         </section>
     </section> 
     `
@@ -82,9 +82,6 @@ function generateHTML(team) {
 
             ${generateManagerCard(team.manager)}
             
-            ${generateEngineerCards(team.engineer)}
-            
-            ${generateInternCards(team.intern)}
 
             </section>           
         </main>
