@@ -1,31 +1,33 @@
 // TODO: 
     // remove all highlighted comments
+    //remove all daed code
 
-// DESCRIPTION: node packages used within application.
-const fs = require ("fs");
-const Employee = require('../lib/Employee');
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer');
-const Intern = require('../lib/Intern');
+// // DESCRIPTION: node packages used within application.
+// const fs = require ("fs");
+// const Employee = require('../lib/Employee');
+// const Manager = require('../lib/Manager');
+// const Engineer = require('../lib/Engineer');
+// const Intern = require('../lib/Intern');
 
-//WORKING! DESCRIPTION: Function generates manager card.
-function generateManagerCard(manager) {
-    return `
-            <section id ="manager-card" class="card team-card">
-                <section class="manager-stripe bg-gradient"></section>
-                <section class="profile-thumb-block">
-                    <img src="/public/img/manager.png" alt="manager-icon" class="profile"/>
-                </section>
-                <section class="card-content">
-                <h2>${manager.name}<small>Manager</small></h2>
-                <p>ID: ${manager.id}</p>
-                <p>Email: ${manager.email}</p>
-                <p>Office Number: ${manager.office}</p>
-                </section>
-            </section> 
-    `
-};
+// //WORKING! DESCRIPTION: Function generates manager card.
+// function generateManagerCard(manager) {
+//     return `
+//             <section id ="manager-card" class="card team-card">
+//                 <section class="manager-stripe bg-gradient"></section>
+//                 <section class="profile-thumb-block">
+//                     <img src="/public/img/manager.png" alt="manager-icon" class="profile"/>
+//                 </section>
+//                 <section class="card-content">
+//                 <h2>${manager.name}<small>Manager</small></h2>
+//                 <p>ID: ${manager.id}</p>
+//                 <p>Email: ${manager.email}</p>
+//                 <p>Office Number: ${manager.office}</p>
+//                 </section>
+//             </section> 
+//     `
+// };
 
+//FIXME: ensure wording is correct in below function and add DESCRIPTION:  
 generateTeamHTML = (team) =>{
     const teamArray = [];
     for (let i = 0; i < team.length; i++) {
@@ -57,9 +59,6 @@ generateTeamHTML = (team) =>{
     return generateTeam;
 }
 
-
-
-
 //DESCRIPTION: Function generates manager card(s).
 const generateManagerCards = function (manager) {
     return `
@@ -78,7 +77,7 @@ const generateManagerCards = function (manager) {
     `
 };
 
-//FIXME: make loop to produce multiple cards if needed. DESCRIPTION: Function generates engineer card(s).
+//DESCRIPTION: Function generates engineer card(s).
 const generateEngineerCards = function (engineer) {
     return `
             <section id ="engineer-card" class="card team-card">
@@ -96,7 +95,7 @@ const generateEngineerCards = function (engineer) {
     `
 };
 
-//FIXME: make loop to produce multiple cards if needed. DESCRIPTION: Function generates intern  card(s).
+//DESCRIPTION: Function generates intern  card(s).
 function generateInternCards(intern) {
     return `
             <section id ="intern-card" class="card team-card">
