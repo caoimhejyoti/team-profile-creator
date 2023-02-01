@@ -90,7 +90,7 @@ const generateEngineerCards = function (engineer) {
                     <h2>${engineer.name}<small>Engineer</small></h2>
                     <p>ID: ${engineer.id}</p>
                     <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p>GitHub: <a href="https://github.com/${engineer.github}" target="blank">${engineer.github}</p>
+                    <p>GitHub: <a href="https://github.com/${engineer.github}" target="blank">${engineer.github}</a></p>
                 </section>
             </section>
     `
