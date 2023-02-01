@@ -21,6 +21,8 @@
         Intern { name: 'i', id: 3, email: 'i@i.com', school: undefined }
         ]
 
+                FIXME: Remove all unnessasary clgs
+
 2) WORKING! Github validation is not working - results in undefined. Possibly to do with axios?
     axios working correctly. currently able to check if username is correct.
     when usrename is correct it is then stored as undefined. 
@@ -41,3 +43,4 @@
 3) WORKING! not able to read information from team array
 
 4) profile image position - look at wrapping cards. 
+
