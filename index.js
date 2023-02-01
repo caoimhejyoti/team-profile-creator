@@ -16,7 +16,7 @@ const Intern = require('./lib/Intern.js');
 
 const team = [];
 
-// FIXME: validate number questions. DESCRIPTION: function with manager questions
+// DESCRIPTION: function with manager questions
 function firstQuestion(){
     inquirer
         .prompt ([
@@ -32,15 +32,15 @@ function firstQuestion(){
             }},
 
             {name: "managerID",
-            type: "number",
+            type: "input",
             message: "What is the Team Manager's ID?",
-            // validate: function (userInput) {
-            //             if (typeof userInput === number){
-            //                 return true
-            //             }else{
-            //                 return ("Please enter a valid ID number");
-            //             };
-            // }
+            validate: managerID => {
+                        if (managerID && /^[0-9]+$/.test(managerID)){
+                            return true
+                        }else{
+                            return ("Please enter a valid ID number");
+                        };
+            }
             },
 
             {name: "managerEmail",
@@ -108,46 +108,7 @@ function addTeamMember(){
         });
 };
 
-// FIXME: can this be used?
-const employeeQuestions = [
-    {name: `employeeName`,
-    type: "input",
-    message: `What is the Employee's name?`,
-    validate: function (userInput) {
-                if (typeof userInput === "string"){
-                    return true
-                }else{
-                    return ("Please enter a valid name");
-                };
-    }},
-
-    {name: `employeeID`,
-    type: "number",
-    message: `What is the Employee's ID?`,
-    // validate: function (userInput) {
-    //             if (typeof userInput === number){
-    //                 return true
-    //             }else{
-    //                 return ("Please enter a valid ID number");
-    //             };
-    // }
-    },
-
-    {name: `employeeEmail`,
-    type: "input",
-    message: `What is the Employee's email address?`,
-    validate: function (userInput) {
-                const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (symbols.test(String(userInput).toLowerCase())) {
-                    return true
-                } else {
-                    return ('Please enter a valid email!');
-                };
-            },
-    }
-];
-
-// FIXME: validate number questions. DESCRIPTION: function with engineer questions
+//DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
@@ -165,13 +126,13 @@ function engineerQuestions() {
             {name: `engineerID`,
             type: "number",
             message: `What is the Engineer's ID?`,
-            // validate: function (userInput) {
-            //             if (typeof userInput === number){
-            //                 return true
-            //             }else{
-            //                 return ("Please enter a valid ID number");
-            //             };
-            // }
+            validate: engineerID => {
+                if (engineerID && /^[0-9]+$/.test(engineerID)){
+                    return true
+                }else{
+                    return ("Please enter a valid ID number");
+                };
+            }
             },
 
             {name: `engineerEmail`,
@@ -189,7 +150,6 @@ function engineerQuestions() {
             {name: "github",
             type: "input",
             message: "What is the Engineers's GitHub username?",
-            // FIXME: validate not working - results in undefined
             validate: function (value) {
                         return axios.get(`https://api.github.com/users/${value}`)
                             .then (value => {
@@ -214,7 +174,7 @@ function engineerQuestions() {
         });
 };
 
-// FIXME: validate number questions. DESCRIPTION: function with intern questions
+// DESCRIPTION: function with intern questions
 function internQuestions() {
     inquirer
         .prompt([
@@ -232,13 +192,13 @@ function internQuestions() {
             {name: `internID`,
             type: "number",
             message: `What is the Intern's ID?`,
-            // validate: function (userInput) {
-            //             if (typeof userInput === number){
-            //                 return true
-            //             }else{
-            //                 return ("Please enter a valid ID number");
-            //             };
-            // }
+            validate: internID => {
+                        if (internID && /^[0-9]+$/.test(internID)){
+                            return true
+                        }else{
+                            return ("Please enter a valid ID number");
+                        };
+                    }
             },
 
             {name: `internEmail`,
