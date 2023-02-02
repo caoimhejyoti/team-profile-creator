@@ -119,7 +119,8 @@ const generateHTML = function (employeeCards) {
 
         <footer id="footer" class="p-3 text-center bg-success bg-gradient text-white">
             <h5>Webpage created by CLI application.</h5>
-            <p> Designed by <a href="https://github.com/caoimhejyoti" target="blank"> CaoimheJyoti</p>
+            <p> Designed by <a href="https://github.com/caoimhejyoti" target="blank"> CaoimheJyoti</a></p>
+            <p> Icons by <a href="https://freeicons.io/profile/2257">www.wishforge.games</a> and <a href="https://freeicons.io/profile/9247">Aficons</a> on <a href="https://freeicons.io">freeicons.io</a></p>
         </footer>
     </body>
     `
