@@ -6,14 +6,14 @@ const inquirer = require("inquirer");
 const fs = require ("fs");
 const axios = require ("axios");
 
-//DESCRIPTION: links to generateHTML.js file for exported packages.
+//COMPLETE! DESCRIPTION: links to JavaScript files for exported packages.
 const generateHTML = require(`./src/generateHTML`);
-
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 
+//DESCRIPTION: Global Variables
 const team = [];
 
 // COMPLETE! DESCRIPTION: function with manager questions
@@ -271,7 +271,7 @@ function internQuestions() {
 
 // FIXME: Change location saved. DESCRIPTION: function to write HTML file
 function renderHTMLFile() {
-    fs.writeFile(`Team.html`, generateTeamHTML(team), (err) =>
+    fs.writeFile(`./dist/Team.html`, generateTeamHTML(team), (err) =>
     err ? console.error(err) : console.log("Team HTML generated"));
 };
 
