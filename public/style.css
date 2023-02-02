@@ -4,8 +4,19 @@ p{
 
 footer{
   z-index:99999;
-
+  
 }
+
+  footer a:link {
+    color: white !important;
+  }
+  a:visited {
+    color: white;
+    }
+
+  footer a:hover {
+    color: hotpink;
+  }
 
 main{
   z-index:-1;
@@ -23,7 +34,7 @@ main{
     position: relative;
     float: left;
     overflow: hidden;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     height:400px;
     border:none;
@@ -34,7 +45,7 @@ main{
   .team-card .manager-stripe {
       background:#b80c09;
       float: left;
-      width: 100%;
+      /* width: 100%; */
       height: 200px;
       overflow: hidden;
   }
@@ -52,22 +63,14 @@ main{
       height: 200px;
       overflow: hidden;
   }
-  /* .team-card .background-block .background {
-    width:100%;
-    vertical-align: top;
-    opacity: 0.9;
-    -webkit-filter: blur(0.5px);
-    filter: blur(0.5px);
-     -webkit-transform: scale(1.8);
-    transform: scale(2.8);
-  } */
   .team-card .card-content {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px 25px;
     color:#232323;
     float:left;
     background:#3abeff;
-    height:50%;
+    height:75%;
+    padding-top: 4rem;
     border-radius:0 0 5px 5px;
     position: relative;
     z-index: 1;
@@ -78,18 +81,11 @@ main{
       width: 120%;
       height: 100%;
       left: 11px;
-      bottom: 51px;
+      bottom: 5px;
       position: absolute;
       z-index: -1;
       transform: rotate(-13deg);
   }
-
-  /* .team-card .profile-thumb-block{
-    position: absolute;
-    background: transparent;
-    bottom: 5%;
-    left: 50%;
-  } */
   .team-card .profile {
     border-radius: 50%;
     position: absolute;
@@ -114,3 +110,24 @@ main{
     font-size: 15px;
     margin-top:10px;
   }
+
+a:link {
+color: black;
+}
+a:visited {
+color: white;
+}
+a:hover {
+  color: white;
+}
+
+#manager-card a:visited {
+color: #b80c09;
+}
+#engineer-card a:visited {
+color: #e18335;
+}
+#intern-card a:visited {
+color: #198754;
+}
+
