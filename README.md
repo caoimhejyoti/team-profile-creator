@@ -3,14 +3,15 @@ Node.js command line application creating a HTML team profile
 
 ----------------------------------------------------------------
 
-![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)   ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)  
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)   ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+
 
 [![MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ----------------------------------------------------------------
-<!-- FIXME: future developements link not working -->
 
-[About](#about)  ✦  [Installation](#installation)  ✦  [Usage](#usage)  ✦  [Future Developments](#future_developements)  ✦  [Resources](#resources)  ✦  [License](#license)  ✦  [Contact](#contact)
+[About](#about)  ✦  [Installation](#installation)  ✦  [Usage](#usage)  ✦  [Future Developments](#future-developments)  ✦  [Resources](#resources)  ✦  [License](#license)  ✦  [Contact](#contact)
 
 ----------------------------------------------------------------
 
@@ -28,23 +29,23 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 ## Acceptance Criteria
 ```md
-COMPLETE! - GIVEN a command-line application that accepts user input
-COMPLETE! - WHEN I am prompted for my team members and their information
+GIVEN a command-line application that accepts user input
+WHEN I am prompted for my team members and their information
 THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-COMPLETE! - WHEN I click on an email address in the HTML
-COMPLETE! - THEN my default email program opens and populates the TO field of the email with the address
-COMPLETE! - WHEN I click on the GitHub username
-COMPLETE! - THEN that GitHub profile opens in a new tab
+WHEN I click on an email address in the HTML
+THEN my default email program opens and populates the TO field of the email with the address
+WHEN I click on the GitHub username
+THEN that GitHub profile opens in a new tab
 WHEN I start the application
-COMPLETE! - THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-COMPLETE!- WHEN I enter the team manager’s name, employee ID, email address, and office number
-COMPLETE! - THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-COMPLETE! - WHEN I select the engineer option
-COMPLETE! - THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-COMPLETE! - WHEN I select the intern option
-COMPLETE! - THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-COMPLETE! - WHEN I decide to finish building my team
-COMPLETE! - THEN I exit the application, and the HTML is generated
+THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+WHEN I enter the team manager’s name, employee ID, email address, and office number
+THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+WHEN I select the engineer option
+THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+WHEN I select the intern option
+THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
+WHEN I decide to finish building my team
+THEN I exit the application, and the HTML is generated
 ```
 
 ## Installation
@@ -62,19 +63,18 @@ Once fully installed, this program is invoked with the following command:
 node index.js
 ```
 
-To run tests, run the following command:
-```bash
-npm tests
-```
+Then follow the CL prompted questions. All questions must be answered. 
 
-<!-- FIXME: confirm storage location -->
-Once the application successfully created the README file, the file will be stored in the **Develop** folder.
+
+Once the application successfully created the Team.html file, the file will be stored in the **Dist** folder.
 
 To see this program in opperation, watch our live demo!
 <!-- [![Youtube screen grab of live demo recording.](Develop/assets/img/youtube-screengrab.png)](https://www.youtube.com/watch?v=CsS6BedKSkE&ab_channel=CaoimheJyoti) -->
 
-## Future Developments
 
+## Future Developments
+1. Work on CSS - positioning of footer. This needs to be at the end of the viewport.
+2. Work on CSS - positioning of card elements. There is currently some reactive positioning bugs with the text and profile image when the window is small. 
 
 ## Resources
 #### Node
@@ -99,12 +99,13 @@ https://codepen.io/soumyashaw/pen/maOzLO
 
 #### Icons
 https://freeicons.io/business-and-employees-7/hierarchy-team-management-coordinator-manager-businessman-employee-icon-434827
-
+                          
 https://freeicons.io/computers-and-hardware/computers-and-hardware-screen-computer-config-configuration-icon-42199
-
+                               
 https://freeicons.io/education-and-learning-2/education-and-learning-cap-student-graduation-university-icon-42511
 
 
+                                
 
 ## License
 This project is using the following license:
