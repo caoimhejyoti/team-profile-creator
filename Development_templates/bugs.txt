@@ -1,5 +1,5 @@
 30.1.22 - 16:22:
-1) when clg team, results in two copies:
+1) WORKING! when clg team, results in two copies:
         [
         Manager {
             name: 'clg test',
@@ -21,7 +21,7 @@
         Intern { name: 'i', id: 3, email: 'i@i.com', school: undefined }
         ]
 
-                FIXME: Remove all unnessasary clgs
+                COMPLETE! FIXME: Remove all unnessasary clgs
 
 2) WORKING! Github validation is not working - results in undefined. Possibly to do with axios?
     axios working correctly. currently able to check if username is correct.
@@ -42,5 +42,5 @@
 
 3) WORKING! not able to read information from team array
 
-4) profile image position - look at wrapping cards. 
+4) profile image position - look at wrapping cards. - added to future develelopemnt notes.  
 
