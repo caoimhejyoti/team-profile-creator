@@ -1,8 +1,7 @@
 // TODO: 
     // remove all highlighted comments
-    //remove all dead code
 
-//FIXME: ensure wording is correct in below function and add DESCRIPTION:  
+//COMPLETE! DESCRIPTION: function to sort through results and create array of employees 
 generateTeamHTML = (team) =>{
     const teamArray = [];
     for (let i = 0; i < team.length; i++) {
@@ -34,7 +33,7 @@ generateTeamHTML = (team) =>{
     return generateTeam;
 }
 
-//DESCRIPTION: Function generates manager card(s).
+//COMPLETE! DESCRIPTION: Function generates manager card(s).
 const generateManagerCards = function (manager) {
     return `
                     <section id ="manager-card" class="col-12 card team-card">
@@ -52,7 +51,7 @@ const generateManagerCards = function (manager) {
     `
 };
 
-//DESCRIPTION: Function generates engineer card(s).
+//COMPLETE! DESCRIPTION: Function generates engineer card(s).
 const generateEngineerCards = function (engineer) {
     return `
                     <section id ="engineer-card" class="card team-card col-5 col-md-5 col-lg-3">
@@ -70,7 +69,7 @@ const generateEngineerCards = function (engineer) {
     `
 };
 
-//DESCRIPTION: Function generates intern  card(s).
+//COMPLETE! DESCRIPTION: Function generates intern  card(s).
 function generateInternCards(intern) {
     return `
                     <section id ="intern-card" class="card team-card col-5 col-md-5 col-lg-3">
@@ -88,7 +87,7 @@ function generateInternCards(intern) {
     `
 };
 
-// FIXME: bug in github link in footer. DESCRIPTION: Function to generate html file with user information
+// COMPLETE! DESCRIPTION: Function to generate html file with user information
 const generateHTML = function (employeeCards) {
     
     return `
@@ -128,6 +127,6 @@ const generateHTML = function (employeeCards) {
     `
 };
 
-// DESCRIPTION: exporting functions for use within index.js
+// COMPLETE! DESCRIPTION: exporting functions for use within index.js
 module.exports = generateHTML;
 
