@@ -72,8 +72,8 @@ To see this program in opperation, watch our live demo!
 
 [![Youtube screen grab of live demo recording.](./public/img/team-profile-creator-live-demo-1.png)](https://youtu.be/iRamqyVmG2U)
 
-<!-- Live demo of test files is also available: -->
-<!-- [![Youtube screen grab of live demo recording.](Develop/assets/img/youtube-screengrab.png)](https://youtu.be/iRamqyVmG2U) -->
+Live demo of test files is also available: -->
+[![Youtube screen grab of test file demo recording.](./public/img/team-profile-creator-live-demo-2.png)](https://youtu.be/yt9Bj6eAa4c)
 
 
 
