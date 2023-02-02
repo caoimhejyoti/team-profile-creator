@@ -2,22 +2,6 @@ p{
   margin-bottom: 0.5rem;
 }
 
-footer{
-  z-index:99999;
-  
-}
-
-  footer a:link {
-    color: white !important;
-  }
-  a:visited {
-    color: white;
-    }
-
-  footer a:hover {
-    color: hotpink;
-  }
-
 main{
   z-index:-1;
 }
@@ -111,23 +95,37 @@ main{
     margin-top:10px;
   }
 
-a:link {
-color: black;
+footer{
+  z-index:99999;
+  /* position: */
 }
-a:visited {
-color: white;
-}
-a:hover {
-  color: white;
-}
+  footer a:link {
+    color: white !important;
+  }
+  a:visited {
+    color: white;
+    }
 
-#manager-card a:visited {
-color: #b80c09;
-}
-#engineer-card a:visited {
-color: #e18335;
-}
-#intern-card a:visited {
-color: #198754;
-}
+  footer a:hover {
+    color: hotpink;
+  }
 
+  a:link {
+    color: black;
+    }
+    a:visited {
+    color: white;
+    }
+      #manager-card a:visited {
+        color: #b80c09;
+      }
+      #engineer-card a:visited {
+        color: #e18335;
+      }
+      #intern-card a:visited {
+        color: #198754;
+      }
+    
+    a:hover {
+      color: white;
+    }
