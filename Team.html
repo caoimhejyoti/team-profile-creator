@@ -18,65 +18,55 @@
         </header>
 
         <main>
-            <section class="container my-5">
-                <div class="row">            
-                    <section id ="manager-card" class="col-12 col-md-6 col-lg-3 card team-card ">
+            <section class="container my-5 ">
+                <div class="row">      
+          
+                    
+                    <section id ="manager-card" class="col-12 card team-card">
                         <section class="manager-stripe bg-gradient"></section>
                         <section class="profile-thumb-block">
                             <img src="/public/img/manager.png" alt="manager.png-icon" class="profile"/>
                         </section>
                         <section class="card-content">
-                            <h2>Tom<small>Manager</small></h2>
-                            <p>ID: 1</p>
-                            <p>Email: <a href="mailto:tom@test.com">tom@test.com</a></p>
-                            <p>Office Number: 11</p>
-                        </section>
-                    </section>
-            
-                    <section id ="engineer-card" class="card team-card col-12 col-md-6 col-lg-3">
-                        <section class="engineer-stripe bg-gradient"></section>
-                        <section class="profile-thumb-block">
-                            <img src="/public/img/engineer.png" alt="engineer.png-icon" class="profile"/>
-                        </section>
-                        <section class="card-content">
-                            <h2>Frank<small>Engineer</small></h2>
+                            <h2>t<small>Manager</small></h2>
                             <p>ID: 2</p>
-                            <p>Email: <a href="mailto:frank@test.com">frank@test.com</a></p>
-                            <p>GitHub: <a href="https://github.com/frank" target="blank">frank</a></p>
+                            <p>Email: <a href="mailto:t@t.com">t@t.com</a></p>
+                            <p>Office Number: 4</p>
                         </section>
                     </section>
-            
-                    <section id ="engineer-card" class="card team-card col-12 col-md-6 col-lg-3">
+
+                    <section id ="engineer-card" class="card team-card col-5 col-md-5 col-lg-3">
                         <section class="engineer-stripe bg-gradient"></section>
                         <section class="profile-thumb-block">
                             <img src="/public/img/engineer.png" alt="engineer.png-icon" class="profile"/>
                         </section>
                         <section class="card-content">
-                            <h2>Mark<small>Engineer</small></h2>
-                            <p>ID: 3</p>
-                            <p>Email: <a href="mailto:frank@test.com">frank@test.com</a></p>
-                            <p>GitHub: <a href="https://github.com/mark" target="blank">mark</a></p>
+                            <h2>${engineer.name}<small>Engineer</small></h2>
+                            <p>ID: ${engineer.id}</p>
+                            <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                            <p>GitHub: <a href="https://github.com/caoimhejyoti" target="blank">${engineer.github}</a></p>
                         </section>
                     </section>
-            
-                    <section id ="intern-card" class="card team-card">
+
+                    <section id ="intern-card" class="card team-card col-5 col-md-5 col-lg-3">
                         <section class="intern-stripe"></section>
                         <section class="profile-thumb-block">
                             <img src="/public/img/intern.png" alt="intern-icon" class="profile"/>
                         </section>
                         <section class="card-content">
-                            <h2>Bill<small>Intern</small></h2>
-                            <p>ID: 4</p>
-                            <p>Email: <a href="mailto:bill@test.com">bill@test.com</a></p>
-                            <p>School: UWA</p>
+                            <h2>${intern.name}<small>Intern</small></h2>
+                            <p>ID: ${intern.id}</p>
+                            <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                            <p>School: ${intern.school}</p>
                         </section>
                     </section> 
+    
+
                 </div>
-           
             </section>           
         </main>
 
-        <footer id="footer" class="p-3 text-center bg-success bg-gradient text-emphasis-secondary fixed-bottom">
+        <footer id="footer" class="p-3 text-center bg-success bg-gradient text-white ">
             <!-- add GitHub link -->
             <h5>Webpage created by CLI application.</h5>
             <p> Designed by <a href="https://github.com/caoimhejyoti" target="blank"> CaoimheJyoti</p>
