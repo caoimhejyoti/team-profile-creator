@@ -16,15 +16,18 @@ const Intern = require('./lib/Intern.js');
 
 const team = [];
 
-// DESCRIPTION: function with manager questions
+// COMPLETE! DESCRIPTION: function with manager questions
 function firstQuestion(){
     inquirer
         .prompt ([
             {name: "managerName",
             type: "input",
             message: "What is the Team Manager's name?",
-            validate: function (userInput) {
-                        if (typeof userInput === "string"){
+            validate: function (managerName) {
+                        if (managerName =="" || managerName== null){
+                            return ("Please enter a valid name");
+                        }
+                        else if (managerName && /^[a-zA-Z]+$/.test(managerName)) {
                             return true
                         }else{
                             return ("Please enter a valid name");
@@ -35,38 +38,44 @@ function firstQuestion(){
             type: "input",
             message: "What is the Team Manager's ID?",
             validate: managerID => {
-                        if (managerID && /^[0-9]+$/.test(managerID)){
+                        if (managerID =="" || managerID== null){
+                            return ("Please enter a valid ID number.");
+                        }
+                        else if (managerID && /^[0-9]+$/.test(managerID)){
                             return true
                         }else{
                             return ("Please enter a valid ID number");
                         };
-            }
-            },
+            }},
 
             {name: "managerEmail",
             type: "input",
             message: "What is the Team Manager's email address?",
             validate: function (userInput) {
                         const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                        if (symbols.test(String(userInput).toLowerCase())) {
+                        if (userInput =="" || userInput== null){
+                            return ("Please enter a valid email.");
+                        }
+                        else if (symbols.test(String(userInput).toLowerCase())) {
                             return true
                         } else {
                             return ('Please enter a valid email!');
                         };
-                    },
-            },
+            }},
 
             {name: "managerOffice",
-            type: "number",
+            type: "input",
             message: "What is the Team Manager's office number?",
-            // validate: function (userInput) {
-            //             if (typeof userInput === number){
-            //                 return true
-            //             }else{
-            //                 return ("Please enter a valid office number");
-            //             };
-            // }
-            },
+            validate: managerOffice => {
+                        if (managerOffice =="" || managerOffice== null){
+                            return ("Please enter a valid Office number.");
+                        }
+                        else if (managerOffice && /^[0-9]+$/.test(managerOffice)){
+                            return true
+                        }else{
+                            return ("Please enter a valid Office number.");
+                        };
+            }},
         ])
         .then ((data) => {
             const manager = new Manager(
@@ -75,14 +84,13 @@ function firstQuestion(){
                 data.managerEmail,
                 data.managerOffice,
             );
-            // console.log(manager);
             team.push(manager);
-            console.log(team);
+            // console.log(team); //used to debug
             addTeamMember();
         });
 }
 
-// DESCRIPTION: function asking user if they want to add a team member
+// COMPLETE! DESCRIPTION: function asking user if they want to add a team member
 function addTeamMember(){
     inquirer
         .prompt([
@@ -108,15 +116,18 @@ function addTeamMember(){
         });
 };
 
-//DESCRIPTION: function with engineer questions
+//COMPLETE! DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
             {name: `engineerName`,
             type: "input",
             message: `What is the Engineer's name?`,
-            validate: function (userInput) {
-                        if (typeof userInput === "string"){
+            validate: function (engineerName) {
+                        if (engineerName =="" || engineerName== null){
+                            return ("Please enter a valid name");
+                        }
+                        else if (engineerName && /^[a-zA-Z]+$/.test(engineerName)){
                             return true
                         }else{
                             return ("Please enter a valid name");
@@ -124,23 +135,28 @@ function engineerQuestions() {
             }},
 
             {name: `engineerID`,
-            type: "number",
+            type: "input",
             message: `What is the Engineer's ID?`,
             validate: engineerID => {
-                if (engineerID && /^[0-9]+$/.test(engineerID)){
-                    return true
-                }else{
-                    return ("Please enter a valid ID number");
-                };
-            }
-            },
+                        if (engineerID =="" || engineerID== null){
+                            return ("Please enter a valid ID number.");
+                        }
+                        else if (engineerID && /^[0-9]+$/.test(engineerID)){
+                            return true
+                        }else{
+                            return ("Please enter a valid ID number.");
+                        };
+            }},
 
             {name: `engineerEmail`,
             type: "input",
             message: `What is the Engineer's email address?`,
             validate: function (userInput) {
                         const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                        if (symbols.test(String(userInput).toLowerCase())) {
+                        if (userInput =="" || userInput== null){
+                            return ("Please enter a valid email.");
+                        }
+                        else if (symbols.test(String(userInput).toLowerCase())) {
                             return true
                         } else {
                             return ('Please enter a valid email!');
@@ -151,13 +167,17 @@ function engineerQuestions() {
             type: "input",
             message: "What is the Engineers's GitHub username?",
             validate: function (value) {
-                        return axios.get(`https://api.github.com/users/${value}`)
-                            .then (value => {
-                                return true;
-                            })
-                            .catch (err => {
-                                return (`Please enter a valid GitHub username`);
-                            });
+                        if (value =="" || value== null){
+                            return ("Please enter a valid Github username.");
+                        }else{ 
+                            return axios.get(`https://api.github.com/users/${value}`)
+                                .then (value => {
+                                    return true;
+                                })
+                                .catch (err => {
+                                    return (`Please enter a valid GitHub username.`);
+                                });
+                        };
             }},
         ])
         .then ((data) => {
@@ -167,22 +187,24 @@ function engineerQuestions() {
                 data.engineerEmail,
                 data.github,
             );
-            // console.log(engineer);
             team.push(engineer);
-            console.log(team);
+            // console.log(team); //used to debug
             addTeamMember();
         });
 };
 
-// DESCRIPTION: function with intern questions
+// COMPLETE! DESCRIPTION: function with intern questions
 function internQuestions() {
     inquirer
         .prompt([
             {name: `internName`,
             type: "input",
             message: `What is the Intern's name?`,
-            validate: function (userInput) {
-                        if (typeof userInput === "string"){
+            validate: function (internName) {
+                        if (internName =="" || internName== null){
+                            return ("Please enter a valid name");
+                        }
+                        else if (internName && /^[a-zA-Z]+$/.test(internName)){
                             return true
                         }else{
                             return ("Please enter a valid name");
@@ -190,13 +212,16 @@ function internQuestions() {
             }},
 
             {name: `internID`,
-            type: "number",
+            type: "input",
             message: `What is the Intern's ID?`,
             validate: internID => {
-                        if (internID && /^[0-9]+$/.test(internID)){
+                        if (internID =="" || internID== null){
+                            return ("Please enter a valid ID number.");
+                        }
+                        else if (internID && /^[0-9]+$/.test(internID)){
                             return true
                         }else{
-                            return ("Please enter a valid ID number");
+                            return ("Please enter a valid ID number.");
                         };
                     }
             },
@@ -206,7 +231,10 @@ function internQuestions() {
             message: `What is the Intern's email address?`,
             validate: function (userInput) {
                         const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                        if (symbols.test(String(userInput).toLowerCase())) {
+                        if (userInput =="" || userInput== null){
+                            return ("Please enter a valid email.");
+                        }
+                        else if (symbols.test(String(userInput).toLowerCase())) {
                             return true
                         } else {
                             return ('Please enter a valid email!');
@@ -216,8 +244,11 @@ function internQuestions() {
             {name: "internSchool",
             type: "input",
             message: "What is the Intern's school",
-            validate: function (userInput) {
-                        if (typeof userInput === "string"){
+            validate: function (internSchool) {
+                        if (internSchool =="" || internSchool== null){
+                            return ("Please enter a valid School name");
+                        }
+                        else if (internSchool && /^[a-zA-Z]+$/.test(internSchool)){
                             return true
                         }else{
                             return ("Please enter a valid school name");
@@ -231,24 +262,23 @@ function internQuestions() {
                 data.internEmail,
                 data.internSchool,
             );
-            // console.log(intern);
             team.push(intern);
-            console.log(team);
+            // console.log(team); //used to debug
             addTeamMember();
         });
 };
 
 
-// DESCRIPTION: function to write HTML file
+// FIXME: Change location saved. DESCRIPTION: function to write HTML file
 function renderHTMLFile() {
     fs.writeFile(`Team.html`, generateTeamHTML(team), (err) =>
-    err ? console.error(err) : console.log(team))
+    err ? console.error(err) : console.log("Team HTML generated"));
 };
 
-//DESCRIPTION: Function to initialize app
+//COMPLETE! DESCRIPTION: Function to initialize app
 function initFnc() {
     firstQuestion();
 }
 
-//DESCRIPTION: Function call to initialize app
+//COMPLETE! DESCRIPTION: Function call to initialize app
 initFnc();
