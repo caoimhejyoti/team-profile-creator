@@ -77,6 +77,11 @@ https://www.npmjs.com/package/string-validate
 
 https://stackoverflow.com/questions/64325326/using-previous-answer-for-the-next-question-in-inquirer
 
+https://www.browserstack.com/guide/unit-testing-in-javascript#:~:text=JavaScript%20Unit%20Testing%20is%20a,organized%20in%20the%20test%20suite
+
+https://jestjs.io/docs/getting-started
+
+
 
 ### Styling
 https://colorlib.com/wp/bootstrap-cards/
