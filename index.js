@@ -1,12 +1,9 @@
-// TODO: 
-    // remove all highlighted comments
-
 // DESCRIPTION: node packages used within application.
 const inquirer = require("inquirer");
 const fs = require ("fs");
 const axios = require ("axios");
 
-//COMPLETE! DESCRIPTION: links to JavaScript files for exported packages.
+// DESCRIPTION: links to JavaScript files for exported packages.
 const generateHTML = require(`./src/generateHTML`);
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager.js');
@@ -16,7 +13,7 @@ const Intern = require('./lib/Intern.js');
 //DESCRIPTION: Global Variables
 const team = [];
 
-// COMPLETE! DESCRIPTION: function with manager questions
+// DESCRIPTION: function with manager questions
 function firstQuestion(){
     inquirer
         .prompt ([
@@ -90,7 +87,7 @@ function firstQuestion(){
         });
 }
 
-// COMPLETE! DESCRIPTION: function asking user if they want to add a team member
+// DESCRIPTION: function asking user if they want to add a team member
 function addTeamMember(){
     inquirer
         .prompt([
@@ -116,7 +113,7 @@ function addTeamMember(){
         });
 };
 
-//COMPLETE! DESCRIPTION: function with engineer questions
+// DESCRIPTION: function with engineer questions
 function engineerQuestions() {
     inquirer
         .prompt([
@@ -193,7 +190,7 @@ function engineerQuestions() {
         });
 };
 
-// COMPLETE! DESCRIPTION: function with intern questions
+// DESCRIPTION: function with intern questions
 function internQuestions() {
     inquirer
         .prompt([
@@ -269,16 +266,16 @@ function internQuestions() {
 };
 
 
-// FIXME: Change location saved. DESCRIPTION: function to write HTML file
+// DESCRIPTION: function to write HTML file
 function renderHTMLFile() {
     fs.writeFile(`./dist/Team.html`, generateTeamHTML(team), (err) =>
     err ? console.error(err) : console.log("Team HTML generated"));
 };
 
-//COMPLETE! DESCRIPTION: Function to initialize app
+// DESCRIPTION: Function to initialize app
 function initFnc() {
     firstQuestion();
 }
 
-//COMPLETE! DESCRIPTION: Function call to initialize app
+// DESCRIPTION: Function call to initialize app
 initFnc();
