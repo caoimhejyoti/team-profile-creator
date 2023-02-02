@@ -1,7 +1,4 @@
-// TODO: 
-    // remove all highlighted comments
-
-//COMPLETE! DESCRIPTION: function to sort through results and create array of employees 
+// DESCRIPTION: function to sort through results and create array of employees 
 generateTeamHTML = (team) =>{
     const teamArray = [];
     for (let i = 0; i < team.length; i++) {
@@ -33,7 +30,7 @@ generateTeamHTML = (team) =>{
     return generateTeam;
 }
 
-//COMPLETE! DESCRIPTION: Function generates manager card(s).
+// DESCRIPTION: Function generates manager card(s).
 const generateManagerCards = function (manager) {
     return `
                     <section id ="manager-card" class="col-12 card team-card">
@@ -51,7 +48,7 @@ const generateManagerCards = function (manager) {
     `
 };
 
-//COMPLETE! DESCRIPTION: Function generates engineer card(s).
+// DESCRIPTION: Function generates engineer card(s).
 const generateEngineerCards = function (engineer) {
     return `
                     <section id ="engineer-card" class="card team-card col-5 col-md-5 col-lg-3">
@@ -69,7 +66,7 @@ const generateEngineerCards = function (engineer) {
     `
 };
 
-//COMPLETE! DESCRIPTION: Function generates intern  card(s).
+// DESCRIPTION: Function generates intern  card(s).
 function generateInternCards(intern) {
     return `
                     <section id ="intern-card" class="card team-card col-5 col-md-5 col-lg-3">
@@ -87,7 +84,7 @@ function generateInternCards(intern) {
     `
 };
 
-// COMPLETE! DESCRIPTION: Function to generate html file with user information
+//  DESCRIPTION: Function to generate html file with user information
 const generateHTML = function (employeeCards) {
     
     return `
@@ -128,6 +125,6 @@ const generateHTML = function (employeeCards) {
     `
 };
 
-// COMPLETE! DESCRIPTION: exporting functions for use within index.js
+//  DESCRIPTION: exporting functions for use within index.js
 module.exports = generateHTML;
 
