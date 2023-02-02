@@ -69,7 +69,8 @@ Then follow the CL prompted questions. All questions must be answered.
 Once the application successfully created the Team.html file, the file will be stored in the **Dist** folder.
 
 To see this program in opperation, watch our live demo!
-[![Youtube screen grab of live demo recording.](Develop/assets/img/youtube-screengrab.png)](https://youtu.be/iRamqyVmG2U)
+
+[![Youtube screen grab of live demo recording.](./public/img/team-profile-creator-live-demo-1.png)](https://youtu.be/iRamqyVmG2U)
 
 <!-- Live demo of test files is also available: -->
 <!-- [![Youtube screen grab of live demo recording.](Develop/assets/img/youtube-screengrab.png)](https://youtu.be/iRamqyVmG2U) -->
